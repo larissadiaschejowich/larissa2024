@@ -15,5 +15,16 @@ for (let i=0; i < botoes.length; i++) {
         textos[i].classList.add(ativo);
 }
 const contadores = document.querySelectoraAll(".contador");
-contadores[0].textContent="contagem regressiva";
+const tempoObjetivo1 = new Date("2023-10-05T00:00:00");
+contadores[0].textContent = calculaTempo(tempoObjetivo1);
 
+contadores[0].textContent = tempoObjetivo1 - tempoAtual;
+ 
+function calculaTempo(tempoObjetivo){
+    let tempoAtual = new Date()
+    let tempofinal = tempoObjetivo - tempoAtual;
+    let segundos = Math.floor(tempoFinal / 1000);
+    let minutos = Math.floor(segundos / 60);
+
+    return minutos;
+}
